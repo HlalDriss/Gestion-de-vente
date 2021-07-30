@@ -5,13 +5,6 @@
     <meta charset="utf-8" />
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" type="text/css" href="assets/styles/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="assets/styles/font-awesome/css/font-awesome.min.css" />
-
-    <script type="text/javascript" src="assets/styles/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="assets/styles/bootstrap/js/bootstrap.min.js"></script>
-    
 <!-- Custom fonts for this template -->
 <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
 	type="text/css">
@@ -22,10 +15,10 @@
 <!-- Custom styles for this template -->
 <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 
-<!-- Custom styles for this page -	->
+<!-- Custom styles for this page -->
 <link href="assets/vendor/datatables/dataTables.bootstrap4.min.css"
 	rel="stylesheet">
-    
+ 
 </head>
 <body>
 
@@ -82,7 +75,6 @@
 <link rel="stylesheet" type="text/css" href="assets/styles/font-awesome/css/font-awesome.min.css" />
 
 <div class="container">
-    <button id="exportButton" class="btn btn-lg btn-danger clearfix"><span class="fa fa-file-pdf-o"></span> Export to PDF</button>
 
     <table id="exportTable" class="table table-hover">
         <thead>
@@ -96,7 +88,7 @@
              <s:iterator value="products" var="product">
                   <tr>
 				      <th scope="row"> <s:property value="key.nomArt"/></th>
-				      <td><s:property value="key.prixArt"/> </td>
+				      <td style="color:black"><s:property value="key.prixArt"/> </td>
 				     
 				 </tr>
              </s:iterator> 
@@ -105,6 +97,7 @@
              </tr>
                     </tbody>
     </table>
+          <h3 align="center" style="color:green">TOTAL: <s:property value="total"/> DH</h3>
 </div>
 
 <!-- you need to include the shieldui css and js assets in order for the components to work -->
@@ -171,4 +164,4 @@
 </div>
 
 </body>
-</html>
+</html> 
