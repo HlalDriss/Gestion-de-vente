@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    
+<!--          <constant name="struts.devMode" value="true" /> -->
+     <package name="default" namespace="/" extends="struts-default">
+        <default-action-ref name="index"></default-action-ref>
+        <action name="index">
+          <result>views/index.jsp</result>
+        </action>
+        
+        <action name="articles" class="org.comm.web.ArticleAction" method="index"> 
+          <result name="success">views/Articles.jsp</result>
+        </action> 
+        
+        <action name="commander" class="org.comm.web.ArticleAction" method="commander">    
+		       <result type="redirectAction">
+							<param name="actionName">viewCart</param>
+							<param name="namespace">/</param>
+               </result>
+               
+        </action> 
+        
+        <action name="viewCart" class="org.comm.web.ViewCart">
+            <result name="success">views/commander.jsp</result>            
+        </action>
+      
+         <action name="Login" class="org.comm.web.LoginAction"  method="login">
+             <result name="input">views/Login.jsp</result>
+              <result name="success">views/index.jsp</result>
+         </action>
+	   <action name="Register" class="org.comm.web.RegisterAction">
+            <result name="input">views/Register.jsp</result>
+           <result name="success">views/Login.jsp</result>
+        </action>
+       
+     </package>
+    <!-- Add addition packages and configuration here. -->
+</struts>
